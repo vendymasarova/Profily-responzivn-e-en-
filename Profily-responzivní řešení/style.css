@@ -1,0 +1,57 @@
+/* nejsme vcerejsi, pouzivame moderni box model */
+html { box-sizing: border-box; }
+*, :after, :before { box-sizing: inherit; }
+
+body {
+	font-family: sans-serif;
+	font-size: 14px;
+}
+
+/* --------Font
+  jmena: 18px, bold, black
+  popisky: 14px, normal, black
+  hlavni nadpis: 28px, bold, black
+
+Karty:
+  ohraniceni: 1px #d5d5d5
+  stin: 0 2px 4px #00ffff03
+  odsazeni: 45px
+  radius: 8px
+  padding: 20p
+-------------------------------------------- */
+
+div.profil{
+  border: 1px solid #d5d5d5;
+  box-shadow: 0 2px 4px #00ffff03; /*2px znamená nahoře a dole stín, 4px = rozmazání stínu*/
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  flex: 1;
+
+}
+
+img.foto{
+	border-radius: 50%;
+}
+
+.container{
+	display: flex;
+	gap: 12px;
+}
+/*pro mobil*/
+@media screen and (max-width: 540px){
+	.container{
+		flex-direction: column;
+	}
+}
+
+
+/*pro tablet*/
+@media screen and (min-width: 540px) and (max-width: 960px) {
+	.container{
+		flex-wrap: wrap;
+	}
+	.profil{
+		min-width: calc(50% - 6px);
+	}
+}
